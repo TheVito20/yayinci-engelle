@@ -147,12 +147,6 @@ Bu proje açık kaynak değildir, ancak geri bildirimlerinizi memnuniyetle karş
 - Hatanın nasıl oluştuğunu adım adım açıkla
 - Konsol hatalarını ekle
 
-## 📞 İletişim
-
-- **Geliştirici**: Furkan
-- **Proje**: Yayıncı Engelle Chrome Extension
-- **Versiyon**: 1.0.0
-
 ## 📜 Lisans
 
 Bu proje kişisel kullanım için geliştirilmiştir.

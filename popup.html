@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayıncı Engelle</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🚫 Yayıncı Engelle</h1>
+            <p class="subtitle">Kick.com filtreleme merkezi</p>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="input-group">
+                <input type="text" id="streamerInput" placeholder="Yayıncı adını gir..." autocomplete="off">
+                <button id="addStreamer" class="btn-primary">
+                    <span class="btn-text">Engelle</span>
+                    <span class="btn-icon">➕</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Blocked Streamers List -->
+        <div class="blocked-section">
+            <h3>🔒 Engellenen Yayıncılar</h3>
+            <div id="blockedList" class="blocked-list">
+                <div class="empty-state">
+                    <p>Henüz kimse engellenmedi</p>
+                    <small>Yukarıdan yayıncı adı ekleyerek başla</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="filters-section">
+            <h3>📂 Kategori Filtreleri</h3>
+            <div class="category-search-section">
+                <div class="input-group">
+                    <input type="text" id="categorySearch" placeholder="Kategori ara (örn: Just Chatting, Slots)..." autocomplete="off">
+                    <button id="refreshCategories" class="btn-secondary" title="Kategorileri yenile">
+                        🔄
+                    </button>
+                </div>
+                <div id="categoryDropdown" class="category-dropdown"></div>
+            </div>
+            <div class="selected-categories">
+                <h4>🚫 Engellenen Kategoriler</h4>
+                <div id="selectedCategoriesList" class="selected-categories-list">
+                    <div class="empty-state-small">
+                        <small>Henüz kategori engellenmedi</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keyword Blocking -->
+        <div class="keywords-section">
+            <h3>🔍 Anahtar Kelime Engelleme</h3>
+            <div class="input-group">
+                <input type="text" id="keywordInput" placeholder="Kelime gir (örn: çekiliş, futbol)">
+                <button id="addKeyword" class="btn-secondary">Ekle</button>
+            </div>
+            <div id="keywordTags" class="keyword-tags"></div>
+        </div>
+
+        <!-- Settings -->
+        <div class="settings-section">
+            <h3>⚙️ Ayarlar</h3>
+            <div class="setting-item">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="silentMode">
+                    <span class="slider"></span>
+                </label>
+                <div class="setting-info">
+                    <span class="setting-title">Sessiz Mod</span>
+                    <small>Bildirimler gösterilmez</small>
+                </div>
+            </div>
+            <div class="setting-item">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="blurMode">
+                    <span class="slider"></span>
+                </label>
+                <div class="setting-info">
+                    <span class="setting-title">Blur Mod</span>
+                    <small>Engelliler silinmez, bulanıklaştırılır</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export/Import -->
+        <div class="data-section">
+            <div class="data-buttons">
+                <button id="exportData" class="btn-outline">📤 Dışa Aktar</button>
+                <button id="importData" class="btn-outline">📥 İçe Aktar</button>
+            </div>
+            <input type="file" id="importFile" accept=".json" style="display: none;">
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="motivational-text" id="motivationalText">
+                Bugün de kanserden korundun, iyi iş ✌️
+            </p>
+            <div class="stats">
+                <span id="blockedCount">0</span> yayıncı engellendi
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
